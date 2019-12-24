@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -10,40 +12,53 @@ class _HomeState extends State<Home> {
     return Text(
       'KATAWUT KAEWMANEE',
       style: TextStyle(
-        fontSize: 30.0, 
-        color: Colors.pink[200],
-        fontFamily: 'Righteous'
-        ),
+          fontSize: 30.0, color: Colors.pink[200], fontFamily: 'Righteous'),
     );
   }
 
   Widget showNumber() {
-    return Text('Age 20 years old',
+    return Text(
+      'Age 20 years old',
       style: TextStyle(
-        fontSize: 20.0, 
-        color: Colors.blueAccent[400],
-        fontFamily: 'Righteous'
-        ),);
+          fontSize: 20.0,
+          color: Colors.blueAccent[400],
+          fontFamily: 'Righteous'),
+    );
   }
 
   Widget showText() {
-    return Text('ยินดีต้อนรับ\n\n',
+    return Text(
+      'ยินดีต้อนรับ\n\n',
       style: TextStyle(
-        fontSize: 45.0, 
-        color: Colors.greenAccent,
-         fontFamily: 'Itim'
-        ),);
+          fontSize: 45.0, color: Colors.greenAccent, fontFamily: 'Itim'),
+    );
   }
+
+  Widget showlogo() {
+    return Image.asset(
+      'images/mower.png',
+      width: 250,
+      height: 250,
+    );
+  }
+
+  // Widget email(){
+
+  // }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
       body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[showText(), showName(), showNumber()],
+        child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(image: AssetImage("images/wall.jpeg")),
+          ),
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[showName(), showlogo()],
+            ),
           ),
         ),
       ),
