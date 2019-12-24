@@ -39,13 +39,70 @@ class _HomeState extends State<Home> {
   Widget showlogo() {
     return Image.asset(
       'images/mower.png',
-      width: 250,
-      height: 250,
+      width: 150,
+      height: 150,
     );
   }
 
   Widget emailText() {
-    return Container();
+    return Container(
+      width: 250.0,
+      child: TextFormField(
+        decoration: InputDecoration(
+          icon: Icon(
+            Icons.person,
+            size: 36.0,
+            color: Colors.red[900],
+          ),
+          labelText: 'Username',
+          hintText: 'your@email.com'
+        ),
+      ),
+    );
+  }
+
+  Widget passText() {
+    return Container(
+      width: 250.0,
+      child: TextFormField(
+        decoration: InputDecoration(
+          icon: Icon(
+            Icons.vpn_key,
+            size: 36.0,
+            color: Colors.red[900],
+          ),
+          labelText: 'Password',
+          hintText: '123456789'
+        ),
+      ),
+    );
+  }
+
+  Widget bottonlogin(){
+    return Container(
+      width: 250,
+      child: RaisedButton.icon(
+        color: Colors.green[100],
+        textColor: Colors.white,
+        icon: Icon(Icons.account_circle),
+        label: Text('Login'),
+        onPressed: (){},
+        
+      ),
+    );
+  }
+
+  Widget bottonregister(){
+    return Container(
+      width: 250,
+      child: RaisedButton.icon(
+        color: Colors.red[100],
+        textColor: Colors.white,
+        icon: Icon(Icons.person_add),
+        label: Text('register'),
+        onPressed: (){},
+      ),
+    );
   }
 
   @override
@@ -59,7 +116,7 @@ class _HomeState extends State<Home> {
           child: Center(
             child: Column(
               mainAxisSize: MainAxisSize.min,
-              children: <Widget>[showName(), showlogo()],
+              children: <Widget>[showName(), showlogo(),emailText(),passText(),bottonlogin(),bottonregister()],
             ),
           ),
         ),
