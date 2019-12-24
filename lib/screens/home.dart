@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:lab1test/utility/mystyle.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -11,8 +12,9 @@ class _HomeState extends State<Home> {
   Widget showName() {
     return Text(
       'KATAWUT KAEWMANEE',
+      
       style: TextStyle(
-          fontSize: 30.0, color: Colors.pink[200], fontFamily: 'Righteous'),
+          fontSize: 30.0, color: MyStyle().textColor, fontFamily: 'Righteous'),
     );
   }
 
@@ -42,9 +44,9 @@ class _HomeState extends State<Home> {
     );
   }
 
-  // Widget email(){
-
-  // }
+  Widget emailText() {
+    return Container();
+  }
 
   @override
   Widget build(BuildContext context) {
