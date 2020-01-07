@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:lab1test/screens/secondPage.dart';
 import 'package:lab1test/utility/mystyle.dart';
 
 class Home extends StatefulWidget {
@@ -39,8 +40,8 @@ class _HomeState extends State<Home> {
   Widget showlogo() {
     return Image.asset(
       'images/mower.png',
-      width: 150,
-      height: 150,
+      width: 100,
+      height: 100,
     );
   }
 
@@ -100,7 +101,12 @@ class _HomeState extends State<Home> {
         textColor: Colors.white,
         icon: Icon(Icons.person_add),
         label: Text('register'),
-        onPressed: (){},
+        onPressed: (){
+          var route = MaterialPageRoute(
+            builder: (BuildContext context) =>SecondPage()
+          );
+          Navigator.of(context).push(route);
+        },
       ),
     );
   }
