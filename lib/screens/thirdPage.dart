@@ -21,10 +21,10 @@ class _ThirdPageState extends State<ThirdPage> {
     return Text("Lastname :${widget.lastnameFromSecondPage}");
   }
   Widget age(){
-    return Text("Lastname :${widget.ageFromSecondPage}");
+    return Text("Age :${widget.ageFromSecondPage}");
   }
 
-  final String titleString = "ThirdPage";
+  final String titleString = "Profile";
   @override
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(
