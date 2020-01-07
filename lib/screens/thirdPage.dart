@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ThirdPage extends StatefulWidget {
-  final String userFromSecondPage,passFromSecondPage,nameFromSecondPage,lastnameFromSecondPage;
-  ThirdPage({Key key,this.userFromSecondPage,this.passFromSecondPage,this.nameFromSecondPage,this.lastnameFromSecondPage}):super(key:key); 
+  final String userFromSecondPage,passFromSecondPage,nameFromSecondPage,lastnameFromSecondPage,ageFromSecondPage;
+  ThirdPage({Key key,this.userFromSecondPage,this.passFromSecondPage,this.nameFromSecondPage,this.lastnameFromSecondPage,this.ageFromSecondPage}):super(key:key); 
   @override
   _ThirdPageState createState() => _ThirdPageState();
 }
@@ -20,6 +20,9 @@ class _ThirdPageState extends State<ThirdPage> {
   Widget lastname(){
     return Text("Lastname :${widget.lastnameFromSecondPage}");
   }
+  Widget age(){
+    return Text("Lastname :${widget.ageFromSecondPage}");
+  }
 
   final String titleString = "ThirdPage";
   @override
@@ -32,7 +35,7 @@ class _ThirdPageState extends State<ThirdPage> {
         child: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            children: <Widget>[email(),pass(),name(),lastname()],
+            children: <Widget>[email(),pass(),name(),lastname(),age()],
           ),
         ),
       ),

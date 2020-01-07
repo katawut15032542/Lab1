@@ -12,6 +12,7 @@ class _SecondPageState extends State<SecondPage> {
   var texPass = new TextEditingController();
   var texName = new TextEditingController();
   var texLastname = new TextEditingController();
+  var texage = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -54,6 +55,15 @@ class _SecondPageState extends State<SecondPage> {
           ),
         ),
         ListTile(
+          title:  TextFormField(
+            decoration: InputDecoration(
+              labelText: 'Age',
+              hintText: 'อายุ'
+            ),
+            controller: texage,
+          ),
+        ),
+        ListTile(
           title: RaisedButton(
             child: Text('register'),
             onPressed: (){
@@ -63,6 +73,7 @@ class _SecondPageState extends State<SecondPage> {
               passFromSecondPage: texPass.text,
               nameFromSecondPage: texName.text,
               lastnameFromSecondPage: texLastname.text,
+              ageFromSecondPage: texage.text,
             )
           );
           Navigator.of(context).push(route);
