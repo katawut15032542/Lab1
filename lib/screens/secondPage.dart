@@ -7,8 +7,11 @@ class SecondPage extends StatefulWidget {
 }
 
 class _SecondPageState extends State<SecondPage> {
-  final String titleString ="SecondPage";
-  var texEditController = new TextEditingController();
+  final String titleString ="Register";
+  var texUser = new TextEditingController();
+  var texPass = new TextEditingController();
+  var texName = new TextEditingController();
+  var texLastname = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -16,16 +19,50 @@ class _SecondPageState extends State<SecondPage> {
       children: <Widget>[
         ListTile(
           title:  TextFormField(
-            controller: texEditController,
+            decoration: InputDecoration(
+              labelText: 'Username',
+              hintText: 'your@email.com'
+            ),
+            controller: texUser,
+          ),
+        ),
+        ListTile(
+          title:  TextFormField(
+            decoration: InputDecoration(
+              labelText: 'Password',
+              hintText: '123456789'
+            ),
+            controller: texPass,
+          ),
+        ),
+        ListTile(
+          title:  TextFormField(
+            decoration: InputDecoration(
+              labelText: 'Name',
+              hintText: 'ชื่อ'
+            ),
+            controller: texName,
+          ),
+        ),
+        ListTile(
+          title:  TextFormField(
+            decoration: InputDecoration(
+              labelText: 'Lastname',
+              hintText: 'นามสกุล'
+            ),
+            controller: texLastname,
           ),
         ),
         ListTile(
           title: RaisedButton(
-            child: Text('Next to Third Page'),
+            child: Text('register'),
             onPressed: (){
               var route = MaterialPageRoute(
             builder: (BuildContext context) =>ThirdPage(
-              valueFromSecondPage: texEditController.text,
+              userFromSecondPage: texUser.text,
+              passFromSecondPage: texPass.text,
+              
+
             )
           );
           Navigator.of(context).push(route);

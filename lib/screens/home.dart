@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:lab1test/screens/secondPage.dart';
+import 'package:lab1test/screens/showPage.dart';
 import 'package:lab1test/utility/mystyle.dart';
 
 class Home extends StatefulWidget {
@@ -10,6 +11,10 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final String titleString ="HomePage";
+  var texEditController1 = new TextEditingController();
+  var texEditController2 = new TextEditingController();
+
   Widget showName() {
     return Text(
       'KATAWUT KAEWMANEE',
@@ -58,6 +63,7 @@ class _HomeState extends State<Home> {
           labelText: 'Username',
           hintText: 'your@email.com'
         ),
+        controller: texEditController1,
       ),
     );
   }
@@ -75,6 +81,7 @@ class _HomeState extends State<Home> {
           labelText: 'Password',
           hintText: '123456789'
         ),
+        controller: texEditController2,
       ),
     );
   }
@@ -87,8 +94,15 @@ class _HomeState extends State<Home> {
         textColor: Colors.white,
         icon: Icon(Icons.account_circle),
         label: Text('Login'),
-        onPressed: (){},
-        
+        onPressed: (){
+          var route = MaterialPageRoute(
+            builder: (BuildContext context) => ShowPage(
+              valueFromHomePage: texEditController1.text,
+              valueFromHomePage2: texEditController2.text,
+            )
+          );
+          Navigator.of(context).push(route);
+        },
       ),
     );
   }
