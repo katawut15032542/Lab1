@@ -61,8 +61,8 @@ class _SecondPageState extends State<SecondPage> {
             builder: (BuildContext context) =>ThirdPage(
               userFromSecondPage: texUser.text,
               passFromSecondPage: texPass.text,
-              
-
+              nameFromSecondPage: texName.text,
+              lastnameFromSecondPage: texLastname.text,
             )
           );
           Navigator.of(context).push(route);

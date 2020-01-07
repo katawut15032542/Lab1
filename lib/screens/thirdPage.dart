@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
 
 class ThirdPage extends StatefulWidget {
-  final String userFromSecondPage,passFromSecondPage;
-  ThirdPage({Key key,this.userFromSecondPage,this.passFromSecondPage}):super(key:key); 
+  final String userFromSecondPage,passFromSecondPage,nameFromSecondPage,lastnameFromSecondPage;
+  ThirdPage({Key key,this.userFromSecondPage,this.passFromSecondPage,this.nameFromSecondPage,this.lastnameFromSecondPage}):super(key:key); 
   @override
   _ThirdPageState createState() => _ThirdPageState();
 }
 
 class _ThirdPageState extends State<ThirdPage> {
   Widget email(){
-    return Text("${widget.userFromSecondPage}");
+    return Text("User : ${widget.userFromSecondPage}");
   }
   Widget pass(){
-    return Text("${widget.passFromSecondPage}");
+    return Text("Password :${widget.passFromSecondPage}");
+  }
+  Widget name(){
+    return Text("Name :${widget.nameFromSecondPage}");
+  }
+  Widget lastname(){
+    return Text("Lastname :${widget.lastnameFromSecondPage}");
   }
 
   final String titleString = "ThirdPage";
@@ -26,7 +32,7 @@ class _ThirdPageState extends State<ThirdPage> {
         child: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            children: <Widget>[email(),pass()],
+            children: <Widget>[email(),pass(),name(),lastname()],
           ),
         ),
       ),
